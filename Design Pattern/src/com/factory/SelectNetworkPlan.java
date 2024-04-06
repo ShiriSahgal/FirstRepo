@@ -1,0 +1,16 @@
+package com.factory;
+
+public class SelectNetworkPlan {
+	public Cellular getPlan(String planType) {
+		if(planType == null) {
+		return null;
+		}
+		if(planType.equalsIgnoreCase("abcNetwork")) {
+			return new abcNetwork();
+		}
+		else if (planType.equalsIgnoreCase("xyzNetwork")) {
+			return new xyzNetwork();
+		}
+		return null;
+	}
+}
