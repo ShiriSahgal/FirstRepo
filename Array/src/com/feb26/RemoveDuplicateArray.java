@@ -5,7 +5,7 @@ import java.util.Arrays;
 public class RemoveDuplicateArray {
 
 	public static void main(String[] args) {
-		 int[] arr = {1, 2, 3, 4, 2, 3, 5, 6, 7, 1}; // Example array with duplicates
+		 int[] arr = {66,2,2,2 ,78,23,23,44,44}; // Example array with duplicates
 	        int n = arr.length;
 
 	        // Sort the array to bring duplicates together

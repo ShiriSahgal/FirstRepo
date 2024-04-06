@@ -4,7 +4,7 @@ public class MinMaxNumber {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		int array[]= {1,3,9,5,2,7};
+		int array[]= {90,23,78,1010101};
 		int max = array[0];
 		int min = array[0];
 		for(int i=1;i<array.length;i++) {
