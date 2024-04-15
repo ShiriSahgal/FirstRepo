@@ -11,7 +11,8 @@ import com.eb.main.HibernateUtil;
 import com.eb.model.Product;
 
 public class ProductDao {
-	private Session session= null;
+	private Session session = null;
+
 	public void insert(Product p) {
 		Session session = HibernateUtil.getSessionFactory().openSession();
       
@@ -20,6 +21,9 @@ public class ProductDao {
 		tx.commit();
 		session.close();
 	}
+
+
+
 	public List<Product> getProductList() {
 		Session session = HibernateUtil.getSessionFactory().openSession();
 	      
@@ -28,6 +32,7 @@ public class ProductDao {
 		session.close();
 		return li;
 	}
+
 	public void deleteProduct(int id) {
 		
 		Session session = HibernateUtil.getSessionFactory().openSession();
@@ -38,19 +43,24 @@ public class ProductDao {
 		tx.commit();
 		session.close();
 	}
+public Product getProductById(int id) {
+		
+		Session session = HibernateUtil.getSessionFactory().openSession();
+	    
+		Transaction tx = session.beginTransaction();
+		Product u = (Product) session.get(Product.class, id);
+		
+		tx.commit();
+		session.close();
+		return u;
+	}
 	public void updateProduct(Product p) {
-	
-	Session session = HibernateUtil.getSessionFactory().openSession();
-	Product pp = (Product) session.load(Product.class, p.getPid());
-	//update tablename set columnanem where id=?
-	pp.setPname(pp.getPname());
-	pp.setQuantity(pp.getQuantity());
-	pp.setPrice(pp.getPrice());
-	pp.setPid(pp.getPid());
-	Transaction tx = session.beginTransaction();
-	session.update(pp);
-	tx.commit();
-	session.close();
-}
-
+		
+		Session session = HibernateUtil.getSessionFactory().openSession();
+		
+		Transaction tx = session.beginTransaction();
+		session.saveOrUpdate(p);
+		tx.commit();
+		session.close();
+	}
 }
