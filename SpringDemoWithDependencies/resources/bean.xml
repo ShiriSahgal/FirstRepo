@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            xmlns:p="http://www.springframework.org/schema/p" 
+    
+    xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+   
+  <bean id="cc" class="com.eb.entity.Course">
+  <property name="courseId" value="101"></property>
+  <property name="courseName" value="java"></property>
+  <property name="duration" value="3"></property>
+  <property name="fees" value="2000"></property>
+  </bean>
+  <bean id="aa" class="com.eb.entity.Address">
+  <property name="city" value="Thane"></property>
+  <property name="district" value="Maharashtra"></property>
+ 
+
+  </bean>
+    <bean id="stud" class="com.eb.entity.Student">
+  <property name="studentid" value="45"></property>
+  <property name="name" value="Roshani"></property>
+  <property name="course" ref="cc"></property>
+    <property name="address" ref="aa"></property>
+  
+  </bean>
+  
+   </beans>
+   
