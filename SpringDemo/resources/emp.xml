@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            xmlns:p="http://www.springframework.org/schema/p" 
+    
+    xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+   
+   <bean id="e" class="com.eb.employee.Employee">
+   
+   <property  name="empid" value="101" ></property>
+      
+   <property  name="empname" value="Roshani Sahu" ></property>
+     
+   <property  name="empDesignation" value="Software Engineer" ></property>
+      
+   <property  name="empSalary" value="100000" ></property>
+     </bean>
+   <bean id="p" class="com.constructor.spring.Post">
+   
+   <constructor-arg value="100" type="int">
+   
+   </constructor-arg>
+      <constructor-arg value="Java is Secure" type="String">
+   
+   </constructor-arg>
+      <constructor-arg value="Nice " type="String">
+   
+   </constructor-arg>
+   </bean>
+   <bean id="M" class="com.eb.list.Mcq">
+   
+   <constructor-arg value="1" type="int">
+   
+   </constructor-arg>
+      <constructor-arg value="Java is...?" type="String">
+   
+   </constructor-arg>
+      <constructor-arg>
+   <list>
+   <value>Java is oops lang</value>
+   <value>java is platform independent</value>
+   <value> java is secure</value>
+   </list>
+   </constructor-arg>
+   </bean>
+   <bean id="em" class="com.eb.map.Exam">
+   <constructor-arg value="101" type="int">
+   </constructor-arg>
+   <constructor-arg value="Java" type="String">
+   </constructor-arg>
+   <constructor-arg>
+   <map>
+   <entry key="Jhon Smith" value="96"></entry>
+     <entry key="Sam Dao" value="90"></entry>
+     <entry key="Shruti" value="85"></entry>
+   </map>
+   </constructor-arg>
+   </bean>
+   </beans>
+   
